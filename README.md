@@ -1,0 +1,2 @@
+# Yo-Sumo-Web
+Web con el fin de crear, participar o adherirse a una petición social, que tenga que ver con una necesidad o proyecto para el bien para la comunidad. Estas peticiones, por ahora, no se financiarán (dejar abierta la opción para futuro) por el usuario con donaciones, si no que las mismas son destinadas a entes políticos con el afán de ordenar una solución pública, con el respaldo del pueblo. dejar abierta la posibilidad de donaciones que sea de fácil uso, con imágenes de las peticiones y genere base de datos
