@@ -1,0 +1,26 @@
+.btn-yosumo {
+    padding: 1px 6px;
+    width: 6rem;
+    margin: 0 5px;
+    padding: 2px 5px !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    color: black !important;
+    background: #c1e5c0 !important;
+    border: 2px solid #c1e5c0 !important;
+    transition-duration: 0.4s;
+}
+.btn-yosumo:hover {
+    background-color: #c1e5c0 !important;
+    border: 2px solid #abdfa9 !important;
+    color: white !important;
+}
+.btn-yosumo:active {
+    border: 2px solid #c1e5c0 !important;
+}
+.btn-yosumo:focus {
+    outline: 0;
+    color: #c1e5c0;
+    border: 2px solid #c1e5c0 !important;
+    box-shadow: 0 0 0 0.1rem #c1e5c0 !important;
+}

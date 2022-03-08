@@ -6,6 +6,7 @@ import { selectAuth } from '../../../reducers/auth/authReducer';
 import { PUBLIC_PATHS_NAV } from '../../../routes/config';
 
 import './sideBar.css';
+import ButtonYoSumo from '../../button/ButtonYoSumo';
 
 const Sidebar = () => {
     const isAuthenticated = useSelector(selectAuth);
@@ -20,12 +21,8 @@ const Sidebar = () => {
                     <span>LOGOUT</span>
                 ) : (
                     <div className="d-flex justify-content-center align-items-center">
-                        <Nav.Link to="/login">
-                            <button className="btn-yosumo" variant="outline-success">Ingresá</button>
-                        </Nav.Link>
-                        <Nav.Link to="/register">
-                            <button className="btn-yosumo" variant="outline-success">Registrate</button>
-                        </Nav.Link>
+                        <ButtonYoSumo path='/login' placeholder="Ingresá" />
+                        <ButtonYoSumo path='/register' placeholder="Registrate" />
                     </div>
                 )}
             </div>
