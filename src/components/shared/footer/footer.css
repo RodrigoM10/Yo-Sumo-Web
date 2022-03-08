@@ -1,21 +1,19 @@
 .footer-style {
-    background-color: #6e6868d2;
+    background-color:  Black;
     color: white;
+    text-align: center;
+    padding-top: 1rem ;
+}
+.footer-style svg:hover {
+    color: #85d182 !important;
 }
 .social-icon {
-    margin: 0 0.2rem;
     color: whitesmoke !important;
-    width: 1rem;
+    width: 1.5rem;
     font-size: 2rem;
     cursor: pointer;
 }
-.social-icon-top {
-    margin: 0 0.4rem;
-    color: whitesmoke !important;
-    width: 2rem;
-    font-size: 2rem;
-    cursor: pointer;
-}
+
 .to-top-btn {
     font-size: 1.5rem;
     color: white;
@@ -24,4 +22,12 @@
     background-color: transparent;
     border: none;
     padding: 0;
+}
+.footer-link {
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.3s;
+}
+.footer-link:hover{
+    color: #85d182 !important;
 }

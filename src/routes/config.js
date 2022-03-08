@@ -19,3 +19,18 @@ export const PUBLIC_PATHS_NAV = [
     ROUTE: '/last-petitions',
   },
 ];
+
+export const PUBLIC_PATHS_FOOT = [
+  {
+    PLACEHOLDER: 'Nosotros',
+    ROUTE: '/aboutUs',
+  },
+  {
+    PLACEHOLDER: 'Contacto',
+    ROUTE: '/contact',
+  },
+  {
+    PLACEHOLDER: 'Terminos y Condiciones',
+    ROUTE: '/terms-and-conditions',
+  },
+];
