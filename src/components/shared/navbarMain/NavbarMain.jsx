@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, Container, Nav, Navbar, NavLink } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import {  Container, Nav, Navbar} from 'react-bootstrap'
 import { PUBLIC_PATHS_NAV } from '../../../routes/config';
 import ButtonYoSumo from '../../button/ButtonYoSumo';
 import { NavbarLinks } from '../sideBar/NavbarLinks';
