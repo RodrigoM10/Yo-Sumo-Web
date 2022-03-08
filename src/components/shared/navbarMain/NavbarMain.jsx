@@ -1,29 +1,33 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import { PUBLIC_PATHS_NAV } from '../../../routes/config';
+import { NavbarLinks } from '../sideBar/NavbarLinks';
+import NavbarOffcanvas from '../sideBar/NavbarOffcanvas';
 import './navbarMain.css'
 
 export const NavbarMain = () => {
   return (
-    <Navbar bg="light" expand="lg">
-  <Container fluid>
-    <Navbar.Brand href="#">Yo Sumo Logo</Navbar.Brand>
-    <Navbar.Toggle aria-controls="navbarScroll" />
-    <Navbar.Collapse id="navbarScroll">
-      <Nav
-        className="me-auto my-2 my-lg-0"
-        style={{ maxHeight: '100px' }}
-        navbarScroll
-      >
-        <Nav.Link href="#action1">Crea una petición</Nav.Link>
-        <Nav.Link href="#action2">Mis peticiones</Nav.Link>
-        <Nav.Link href="#action2">Ultimas peticiones</Nav.Link>
-      </Nav>
-      <Nav.Link>
-        <button variant="outline-success">Ingresá</button>
-        <button variant="outline-success">Registrate</button>
-      </Nav.Link>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
+    <Navbar className="navbar-main-style" bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="#">Yo Sumo Logo</Navbar.Brand>
+        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+        <NavbarOffcanvas />
+        <Navbar.Collapse className='d-none d-lg-inline'>
+          <Nav
+            className="mx-auto"
+          >
+             {PUBLIC_PATHS_NAV.map((path, i) => {
+                return <NavbarLinks route={path.ROUTE} link={path.PLACEHOLDER} key={i} />;
+            })}
+          </Nav>
+          <Nav.Link to="/login">
+            <button className="btn-yosumo" variant="outline-success">Ingresá</button>
+          </Nav.Link>
+          <Nav.Link to="/register">
+            <button className="btn-yosumo" variant="outline-success">Registrate</button>
+          </Nav.Link>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }

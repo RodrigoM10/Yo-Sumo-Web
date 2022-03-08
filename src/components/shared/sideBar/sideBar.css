@@ -1,0 +1,24 @@
+.offcanvas-body-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+}
+.sidebar-social-icons-container {
+    height: 15rem;
+}
+.sidebar-social-icons-container svg{
+    margin: 2rem 1.5rem;
+    font-size: 2rem;
+    color: black;
+    transition-duration: 0.4s;
+}
+.sidebar-social-icons-container svg:hover{
+    color: #85d182;
+}
+.divider-us {
+    background-color: #85d182;
+    margin-top:0rem ;
+    height: 2px;
+    width: 80%;
+  }

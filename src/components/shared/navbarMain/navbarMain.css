@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap");
+.navbar-main-style {
+    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.navbar-link{
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0rem 1.5rem !important;
+    transition-duration: 0.4s;
+    text-align: center;
+}
+.navbar-link:hover{
+    color: #85d182;
+    text-decoration: none;
+}
+.active-navbar-link{
+    color: #85d182;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin: 0rem 1.5rem !important;
+    transition-duration: 0.4s;
+}
+.active-navbar-link:hover{
+    color: #85d182;
+    text-decoration: none;
+}
+.btn-yosumo {
+    padding: 1px 6px;
+    width: 6rem;
+    margin: 0 5px;
+    padding: 2px 5px;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: black !important;
+    background: #c1e5c0 !important;
+    border: 2px solid #c1e5c0 !important;
+    transition-duration: 0.4s;
+}
+.btn-yosumo:hover {
+    background-color: #c1e5c0 !important;
+    border: 2px solid #abdfa9 !important;
+    color: white !important;
+}
+.btn-yosumo:active {
+    border: 2px solid #c1e5c0 !important;
+}
+.btn-yosumo:focus {
+    outline: 0;
+    color: #c1e5c0;
+    border: 2px solid #c1e5c0 !important;
+    box-shadow: 0 0 0 0.1rem #c1e5c0 !important;
+}

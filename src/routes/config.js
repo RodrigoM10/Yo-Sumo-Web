@@ -5,13 +5,17 @@ export const BACKOFFICE_PATHS = [
   },
 ];
 
-export const PUBLIC_PATHS = [
+export const PUBLIC_PATHS_NAV = [
   {
-    PLACEHOLDER: 'Home',
-    ROUTE: '/',
+    PLACEHOLDER: 'Crea una petición',
+    ROUTE: '/create-petition',
   },
   {
-    PLACEHOLDER: 'AboutUs',
-    ROUTE: '/us',
+    PLACEHOLDER: 'Mis peticiones',
+    ROUTE: '/my-petitions',
+  },
+  {
+    PLACEHOLDER: 'Ultimas peticiones',
+    ROUTE: '/last-petitions',
   },
 ];
