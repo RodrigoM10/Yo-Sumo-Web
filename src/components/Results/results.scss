@@ -1,0 +1,144 @@
+.results-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 165px;  
+    width: 100%;
+    height: 50vh;
+    background: #FFFFFF;
+}
+
+.results-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 50%;
+}
+
+.results-text{
+    padding-left: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+
+.results-subtext {
+    padding-left: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+
+.results-numbers {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    /* position: static; */
+    /* width: 540px; */
+    height: 210px;
+}
+
+.row-1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 10px;
+}
+
+
+.numbers-col-1{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    position: static;
+}
+
+.numbers-col-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    position: static;
+}
+
+.col-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 180px;
+    height: 66px
+;
+}
+
+.col-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    position: static;
+    width: 48px;
+    height: 48px;
+}
+
+.col-text {
+    margin-left: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+
+.col-subtext {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+
+.row-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 10px;
+}
+
+@media  screen and (max-width:1100px) {
+    .results-container{
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        
+
+    }
+    .results-section {
+        align-items: center
+    }
+    .results-text{
+        font-size: 26px;
+        line-height: normal;
+    }
+   
+}
