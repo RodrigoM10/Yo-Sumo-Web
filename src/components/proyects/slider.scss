@@ -1,0 +1,82 @@
+
+// .carousel{
+//     position: relative !important;
+//     display: flex !important;
+//     justify-content: center !important;
+//     align-items: center !important;
+//     width: 100% !important;
+// }
+
+
+
+.card-title{
+    /* Heading / H5 */
+font-family: 'Inter'!important;
+font-style: normal!important;
+font-weight: 600!important;
+font-size: 24px!important;
+line-height: 32px!important;
+/* or 133% */
+text-align: center!important;
+font-feature-settings: 'salt' on, 'liga' off!important;
+/* Text / Gray 900 */
+color: #040704!important;
+}
+
+.card-text{
+    /* Heading / H5 */
+font-family: 'Inter'!important;
+font-style: normal!important;
+font-weight: 500!important;
+font-size: 15px!important;
+
+/* or 133% */
+/* Text / Gray 900 */
+color: #020302!important;
+}
+
+.carousel-item{
+    border: 1px solid rgba(192, 192, 192, 0.43);
+/* Header Image Shadow */
+
+box-shadow: 48px 24px 48px rgba(24, 37, 56, 0.12);
+}
+
+
+
+.card-body{
+display: flex;
+flex-direction: column;
+flex: 1 1 auto;
+padding: 1rem 1rem;
+justify-content: center;
+align-items: center;
+
+}
+
+.card-button{
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 12px 32px;
+width: 130px;
+height: 35px;
+/* Accent / Pastel Green */
+background: #C1E5C0;
+border-radius: 6px;
+}
+
+.card-button h4 {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+margin-top:4px    
+}
+
+
+@media screen and (max-width: 770px) {
+    .card{
+        width: 350px !important;
+    }
+}

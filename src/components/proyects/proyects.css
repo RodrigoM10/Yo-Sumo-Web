@@ -1,0 +1,105 @@
+
+.proyects-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+    background: #F4F5F7;
+    padding-bottom:50px;
+    margin-bottom:5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+.heading {
+    justify-content: center;
+    align-items: flex-end;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 136%;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+
+.heading-h4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191F;
+}
+.heading-h5 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #d5e7d2;
+}
+
+.heading-h6 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #d5e7d2;
+}
+
+.testimonials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Slider{
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.src-Card-styles-module__card--1s_T3{
+    width: 730px !important;
+    box-shadow: 48px 24px 48px rgba(24, 37, 56, 0.20) !important;
+    border: 2px solid rgba(137, 192, 126, 0.5);
+}
+
+
+
+@media screen and (max-width: 770px) {
+    .src-Card-styles-module__card--1s_T3 {
+        width: 450px !important;
+    }
+    .heading {
+        justify-content: center;
+        align-items: flex-end;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 136%;
+        text-align: center;
+        font-feature-settings: 'salt' on, 'liga' off;
+        color: #18191F;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .src-Card-styles-module__card--1s_T3 {
+        width: 350px !important;
+    }
+  }
