@@ -1,0 +1,46 @@
+.btn-google-auth {
+    padding: 1px 6px;
+    margin: 0 5px;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    color: black !important;
+    background: #c1e5c0 !important;
+    border: 2px solid #c1e5c0 !important;
+    transition-duration: 0.4s;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap");
+.btn-google-auth {
+    padding: 1px 6px;
+    margin: 0 5px;
+    padding: 2px 5px !important;
+    border-radius: 0.5rem !important;
+    background: #ffffff !important;
+    border: 2px solid #c1e5c0 !important;
+    transition-duration: 0.4s;
+}
+.btn-google-auth:hover {
+    background-color: #c1e5c0 !important;
+    border: 2px solid #abdfa9 !important;
+    color: white !important;
+}
+
+.btn-google-auth:active {
+    border: 2px solid #c1e5c0 !important;
+}
+.btn-google-auth:focus {
+    outline: 0;
+    color: #c1e5c0;
+    border: 2px solid #c1e5c0 !important;
+    box-shadow: 0 0 0 0.1rem #c1e5c0 !important;
+}
+
+.btn-google-auth div {
+    background-color: transparent !important;
+}
+
+.btn-google-auth span {
+    color: black !important;
+    font-weight: 600 !important;
+    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
