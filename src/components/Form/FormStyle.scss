@@ -1,0 +1,167 @@
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:5rem;
+  }
+  
+  .form-container {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container .header {
+    flex: 20%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .form-container .body {
+    flex: 60%;
+  }
+  
+  .form-container .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+  }  
+
+  .form-container .footer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    width: 115px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    background: #C1E5C0;
+    transition-duration: 0.8s;
+  }
+  
+
+  .form-container .footer button:hover {
+    background-color: #c1e5c0 ;
+    border: 2px solid #abdfa9 ;
+   
+}
+
+.form-container .footer button:active {
+    border: 3px solid #292929 ;
+}
+.form-container .footer button:focus {
+    border: 2px solid #494949 ;
+    box-shadow: 0 0 0 0.1rem #c1e5c0 ;
+}
+
+.form-container .footer button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #e4e4e4;
+}
+
+
+
+  .title-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-container input {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    padding-left: 5px;
+    font-size: 20px;
+  }
+
+  .photo-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo-container input {
+    margin: 5px;
+    width:  -webkit-fill-available;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .description-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .description-container input {
+    display: flex;
+    align-items: flex-start;
+    margin: 5px;
+    width: 80%;
+    height: 160px;
+    font-size: 20px;
+  }
+
+  .personal-info-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .personal-info-container input {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    padding-left: 5px;
+    font-size: 20px;
+  }
+  
+
+//   Progress bar
+
+.progressbar {
+    width: 400px;
+    height: 10px;
+    background-color: rgb(117, 117, 117);
+    margin-bottom: 50px;
+  }
+  
+  .progressbar div {
+    width: 33.3%;
+    height: 100%;
+    background-color: rgb(151, 209, 145);
+  }
+
+  input {
+    border: 2px solid #C1E5C0;
+    border-radius: 5px;
+  }
+  
+  input:focus {
+    border: 4px solid #C1E5C0;
+  }
+  
