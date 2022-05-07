@@ -20,9 +20,9 @@ const Form = () => {
   const FormTitles = [
     "Titulo",
     "Foto",
-    "descripcion",
-    "Personal Info",
-    "Summary",
+    "Descripcion",
+    "Informacion personal",
+    "Resumen",
   ];
 
   

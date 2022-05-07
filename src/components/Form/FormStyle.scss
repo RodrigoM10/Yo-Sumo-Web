@@ -9,8 +9,9 @@
   }
   
   .form-container {
-    width: 400px;
-    height: 400px;
+    min-width: 40%;
+    max-width: 80%;
+    min-height: 400px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -114,13 +115,14 @@
     align-items: center;
   }
   
-  .description-container input {
+  .description-container textarea {
     display: flex;
-    align-items: flex-start;
     margin: 5px;
     width: 80%;
-    height: 160px;
+    height: 60px;
     font-size: 20px;
+    outline:none;
+    resize: none;
   }
 
   .personal-info-container {
@@ -138,6 +140,35 @@
     height: 40px;
     padding-left: 5px;
     font-size: 20px;
+  }
+
+  .title-summary{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .description-summary{
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    background: #889ccf;
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
+    
+  }
+  .description-container p {
+    
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    background: #889ccf;
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
   }
   
 
@@ -162,6 +193,15 @@
   }
   
   input:focus {
+    border: 4px solid #C1E5C0;
+  }
+
+  textarea {
+    border: 2px solid #C1E5C0;
+    border-radius: 5px;
+  }
+  
+  textarea:focus {
     border: 4px solid #C1E5C0;
   }
   
