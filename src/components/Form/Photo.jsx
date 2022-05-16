@@ -14,6 +14,7 @@ const Photo = () => {
   return (
     <div className='photo-container'>
       <input
+      className='photo-input'
       type="file"
       name="file"
       placeholder='Sube una foto'

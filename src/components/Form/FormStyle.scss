@@ -1,5 +1,5 @@
 .form {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -9,15 +9,23 @@
   }
   
   .form-container {
-    min-width: 40%;
-    max-width: 80%;
-    min-height: 400px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    margin-bottom: 8rem;
+  }
+
+  .header{
+    max-width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:15px
   }
+
+  .header-section{
+    text-align: justify;
+    
+  }
+  
 
   .form-container .header {
     flex: 20%;
@@ -28,11 +36,17 @@
   .form-container .body {
     flex: 60%;
   }
-  
-  .form-container .footer {
-    flex: 20%;
+
+  .body {
     display: flex;
     justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container .footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom:15px;
   }  
 
   .form-container .footer button {
@@ -84,10 +98,10 @@
 
   .title-container input {
     margin: 5px;
-    width: 200px;
+    width: 300px;
     height: 40px;
     padding-left: 5px;
-    font-size: 20px;
+    
   }
 
   .photo-container {
@@ -100,10 +114,8 @@
   }
 
   .photo-container input {
-    margin: 5px;
-    width:  -webkit-fill-available;
-    height: 40px;
-    font-size: 20px;
+        margin: 7px;
+        height: 48px;
   }
 
   .description-container {
@@ -119,10 +131,8 @@
     display: flex;
     margin: 5px;
     width: 80%;
-    height: 60px;
-    font-size: 20px;
-    outline:none;
-    resize: none;
+    height: 10rem;
+    outline: none;
   }
 
   .personal-info-container {
@@ -135,11 +145,10 @@
   }
   
   .personal-info-container input {
-    margin: 5px;
-    width: 200px;
-    height: 40px;
+    margin: 20px;
+    width: max-content;
+    height: 45px;
     padding-left: 5px;
-    font-size: 20px;
   }
 
   .title-summary{
@@ -152,8 +161,6 @@
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 400;
-    color: #ffffff;
-    background: #889ccf;
     margin: 0 0 25px;
     overflow: hidden;
     padding: 20px;
@@ -164,8 +171,6 @@
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 400;
-    color: #ffffff;
-    background: #889ccf;
     margin: 0 0 25px;
     overflow: hidden;
     padding: 20px;
@@ -187,21 +192,52 @@
     background-color: rgb(151, 209, 145);
   }
 
-  input {
-    border: 2px solid #C1E5C0;
+
+   .photo-input {
+    border:none;
     border-radius: 5px;
   }
   
-  input:focus {
-    border: 4px solid #C1E5C0;
+
+  //advice Style
+
+  .advice-container {
+    border-width: 1px;
+    border-color: rgb(219, 217, 219);
+    border-radius: 5px;
+    border-style: solid;
+    margin-top:50px;
+    background-color: rgb(246, 244, 246);
+    border-radius: 5px;
+    padding:50px
+  }
+  
+  .advice-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    text-align: justify;
   }
 
-  textarea {
-    border: 2px solid #C1E5C0;
-    border-radius: 5px;
+  .advice-title{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    margin-top: -22px;
+}
+  
+
+  .advice-list {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+
+  .listed{
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem
   }
   
-  textarea:focus {
-    border: 4px solid #C1E5C0;
-  }
+
   

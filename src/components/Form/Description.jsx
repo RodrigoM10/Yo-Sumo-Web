@@ -6,8 +6,8 @@ const Description = ({formData,setFormData}) => {
   return (
     <div className='description-container'>
       
-        <textarea value={formData.description} onChange={(e)=> setFormData({...formData, description: e.target.value})}>
-          Coloque su comentario
+        <textarea value={formData.description} placeholder="Coloque su decripcion" onChange={(e)=> setFormData({...formData, description: e.target.value})}>
+          
         </textarea>
       
     </div>

@@ -4,6 +4,7 @@ import Photo from "./Photo";
 import Description from "./Description";
 import PersonalInfo from "./PersonalInfo";
 import Summary from "./Summary";
+import Advices from "./FormAdvices/FormAdvices";
 import './FormStyle.scss'
 
 const Form = () => {
@@ -18,12 +19,19 @@ const Form = () => {
   })
 
   const FormTitles = [
-    "Titulo",
-    "Foto",
-    "Descripcion",
-    "Informacion personal",
-    "Resumen",
+    "Titulo de la petición",
+    "Agregá una foto",
+    "Contá tu historia",
+    "Información personal",
+    "Resumen de tu petición",
   ];
+
+  const FormSubtitles = [
+    "¿Contale a las personas qué es lo que querés cambiar?",
+    "Las peticiones con foto consiguen hasta 6 veces más firmas",
+    "Explicá el problema y porque es importante. Contá cómo te impacta a vos, a tu familia y a la comunidad, esto hace que más personas apoyen la causa.",
+    "Completá tus datos en caso de que tengamos que contactar para revisar la petición.","Antes de finalizar, chequea que todo este correcto, y si necesitas cambiar algo, podes volver a editar tu petición",
+  ]
 
   
 
@@ -49,10 +57,15 @@ const Form = () => {
         >
         </div>
       </div>
-        <div className="form-container">
-          <div className="header">
-            <h1>{FormTitles[page]}</h1>
+      <div className="header">
+        <div className="header-section">
+            <h1><strong>{FormTitles[page]}</strong></h1>
+            <br/>
+            <h4>{FormSubtitles[page]}</h4>
+            </div>
           </div>
+        <div className="form-container">
+         
           <div className="body">{PageDisplay()}</div>
           <div className="footer">
           <button
@@ -79,6 +92,7 @@ const Form = () => {
             {page === FormTitles.length-1 ? "Finalizar" : "Siguiente"}
           </button>
           </div>
+          <Advices/>
         </div>
       
     </div>

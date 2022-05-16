@@ -16,8 +16,11 @@ const Summary = ({formData}) => {
     <div>{photo}</div>
     <div className='description-container'>
       <p>{description}</p></div>
-    <div>{name}, {cellphone}, {email}</div>
-    
+    <div> 
+          <p>{name}</p>
+          <p>{cellphone}</p> 
+          <p>{email}</p>
+    </div>
     </div>
   )
 }

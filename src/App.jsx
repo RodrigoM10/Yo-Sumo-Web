@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PublicRoutes from './routes/PublicRoutes';
 import NoMatch from './pages/NoMatch';
-import Form from '../src/components/Form/Form'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -11,10 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<PublicRoutes />} />
-        <Route path="/create-petition" element={<Form />} />
-        <Route path="/404" element={<NoMatch />} />
-
-        
+        <Route path="/404" element={<NoMatch />} /> 
         {/* <Route path="/backoffice" render={() => <BackofficeLayout/>} /> */}
       </Routes>
     </BrowserRouter>

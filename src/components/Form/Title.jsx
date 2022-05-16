@@ -10,4 +10,4 @@ const Title = ({formData,setFormData}) => {
 }
 
 //cuando hay algun cambio en el objeto, quiero que el setFormData mantenga todos los campos iguales, excepto el campo en el que el usuario esta completando
-export default Title
+export default Title;
