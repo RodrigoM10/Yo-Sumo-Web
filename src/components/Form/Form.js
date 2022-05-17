@@ -11,7 +11,7 @@ const Form = () => {
   const [page, setPage] = useState(0);
   const [formData,setFormData] = useState({
     title : "",
-    photo: "",
+    file: "",
     description: "",
     name:"",
     cellphone:"",

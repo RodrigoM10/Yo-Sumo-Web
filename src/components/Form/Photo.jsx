@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
 import './FormStyle.scss'
 
-const Photo = () => {
-  const [image,setImage] = useState('')
+const Photo = ({formData,setFormData}) => {
 
+  
+  
   const uploadImage = async (e) => {
-    const files = e.target.files
-    const data = new FormData()
-    data.append('file',files[0])
-    data.append('upload_preset','darwin')
+   const file = e.target.files[0]
+    file.isUploading=true;
+    setFormData({...formData,file} )
+    console.log(file)
+    
   }
 
   return (
@@ -16,7 +18,7 @@ const Photo = () => {
       <input
       className='photo-input'
       type="file"
-      name="file"
+      files={formData.file}
       placeholder='Sube una foto'
       onChange={uploadImage}
       />
