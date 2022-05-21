@@ -19,6 +19,7 @@
     "react-bootstrap": "^2.2.0",
     "react-dom": "^17.0.2",
     "react-elastic-carousel": "^0.11.5",
+    "react-hook-form": "^7.31.1",
     "react-horizontal-timeline": "^1.5.3",
     "react-icons": "^4.3.1",
     "react-intersection-observer": "^8.33.1",
@@ -28,7 +29,8 @@
     "react-scripts": "4.0.3",
     "react-ui-cards": "^3.0.0",
     "react-vertical-timeline-component": "^3.5.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
