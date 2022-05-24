@@ -55,6 +55,14 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
 
   return (
     <div>
+      <div>
+        <h1>
+          <strong>{FormTitles[stepNumber]}</strong>
+        </h1>
+        <br />
+        <h4>{FormSubtitles[stepNumber]}</h4>
+      </div>
+
       <Formik
         initialValues={snapshot}
         onSubmit={handleSubmit}

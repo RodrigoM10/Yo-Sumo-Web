@@ -18,15 +18,6 @@ const validationSchema = yup.object({
 const PetitionForm = ({step}) => {
   return (
     <div className="form">
-      <div className="header">
-        {/* <div className="header-section">
-          <h1>
-            <strong>{FormTitles[step]}</strong>
-          </h1>
-          <br />
-          <h4>{FormSubtitles[step]}</h4>
-        </div> */}
-      </div>
       <div className="form-container">
         <MultistepForm
           initialValues={{
@@ -51,7 +42,7 @@ const PetitionForm = ({step}) => {
           >
             <InputField            
               name="title"
-              label="title"
+              label="Titulo"
             />
           </FormStep>
           <FormStep stepName="image"
@@ -63,19 +54,19 @@ const PetitionForm = ({step}) => {
             <InputField   
               className='photo-input'          
               name="image"
-              label="image"
+              label="Imagen"
               type="file"
             />
           </FormStep>
           <FormStep stepName="Description"
             onSubmit={() => console.log("running step3")}
             validationSchema={yup.object({
-              description:yup.string().max(1000).required()
+              description:yup.string().max(500).required("Coloque una descripción")
           })}
             className="description-container">
             <InputField
               name="description"
-              label="description"
+              label="Descripción"
             />
           </FormStep>
           <FormStep stepName="PersonalData"
@@ -83,13 +74,13 @@ const PetitionForm = ({step}) => {
             validationSchema={yup.object({
               name:yup.string().required(),
               cellphone:yup.number().required(),
-              email:yup.string().email().required(),
+              email:yup.string().email().required("Debe colocar un mail valido"),
             })}
             className="personal-info-container">
-            <InputField className="title-container" name="name" label="name" />
+            <InputField className="title-container" name="name" label="Nombre completo" />
             <InputField
               name="cellphone"
-              label="cellphone"
+              label="Celular"
             />
             <InputField
               name="email"

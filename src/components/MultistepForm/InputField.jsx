@@ -8,7 +8,7 @@ const InputField = ({label,...props}) => {
   return (
     <div>
     <TextField
-    
+    fullWidth
     label={label}
     {...field}
     {...props}

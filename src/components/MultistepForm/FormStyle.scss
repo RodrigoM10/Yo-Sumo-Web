@@ -1,15 +1,17 @@
 .form {
     max-width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top:5rem;
   }
   
   .form-container {
     margin-bottom: 8rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
   }
 
   .header{
@@ -27,15 +29,6 @@
   }
   
 
-  .form-container .header {
-    flex: 20%;
-    display: grid;
-    place-items: center;
-  }
-  
-  .form-container .body {
-    flex: 60%;
-  }
 
   .body {
     display: flex;
@@ -209,7 +202,8 @@
     margin-top:50px;
     background-color: rgb(246, 244, 246);
     border-radius: 5px;
-    padding:50px
+    padding:50px;
+    margin-bottom: 10rem;
   }
   
   .advice-list-container {
