@@ -3,13 +3,14 @@ import {  Route, Routes } from 'react-router-dom';
 import PublicLayout from '../layout/PublicLayout';
 import Home from '../pages/Home';
 import Form from '../components/Form/Form';
+import PetitionForm from '../components/MultistepForm/index';
 
 function PublicRoutes() {
     return (
             <PublicLayout>
                 <Routes>
                     <Route  path="/" element={<Home />} />
-                    <Route exact path="/create-petition" element={<Form />} />
+                    <Route exact path="/create-petition" element={<PetitionForm/>} />
                 </Routes>
             </PublicLayout>
     );
