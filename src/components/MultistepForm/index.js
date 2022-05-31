@@ -1,23 +1,35 @@
 
-import React from 'react'
+import React,{useState} from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import InputField from './InputField'
 import './FormStyle.scss'
 import MultistepForm, { FormStep } from './MultistepForm'
 import Advices from './FormAdvices/FormAdvices'
-
-const validationSchema = yup.object({
-    title: yup.string().required("Debe colocar un titulo")
-})
+import { TextField } from '@material-ui/core'
 
 
 
 
 
-const PetitionForm = ({step}) => {
+
+const PetitionForm = () => {
+
+  const [image,setImage] =useState({})
+
+  const uploadImage =  (e) => {
+    const imagen = e.target.files[0];
+
+    setImage(imagen.name);
+  };
+
+console.log({image})
+
+ 
+
   return (
     <div className="form">
+      
       <div className="form-container">
         <MultistepForm
           initialValues={{
@@ -47,15 +59,13 @@ const PetitionForm = ({step}) => {
           </FormStep>
           <FormStep stepName="image"
             onSubmit={() => console.log("running step2")}
-            validationSchema={yup.object({
-              image: yup.mixed().required()
-          })}
+            
           className="photo-container">
-            <InputField   
-              className='photo-input'          
+            <InputField
               name="image"
               label="Imagen"
               type="file"
+              onChange={uploadImage }
             />
           </FormStep>
           <FormStep stepName="Description"
@@ -77,15 +87,9 @@ const PetitionForm = ({step}) => {
               email:yup.string().email().required("Debe colocar un mail valido"),
             })}
             className="personal-info-container">
-            <InputField className="title-container" name="name" label="Nombre completo" />
-            <InputField
-              name="cellphone"
-              label="Celular"
-            />
-            <InputField
-              name="email"
-              label="email"
-            />
+            <InputField name="name" label="Nombre completo" />
+            <InputField name="cellphone" label="Celular" />
+            <InputField name="email" label="email" />
           </FormStep>
         </MultistepForm>
       </div>

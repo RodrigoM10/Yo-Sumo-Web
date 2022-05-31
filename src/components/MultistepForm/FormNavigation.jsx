@@ -2,11 +2,12 @@ import React from 'react'
 import { FormikValues } from 'formik'
 import {Button} from '@material-ui/core'
 import './FormStyle.scss'
+import { Link } from 'react-router-dom'
+import { PUBLIC_PATHS_NAV } from '../../routes/config'
 
 const FormNavigation = (props) => {
 
     const {IsLastStep,hasPrevious,onBackClick} = props
-    console.log("ultimo paso?",IsLastStep)
 
   return (
     <div className="footer">
@@ -15,8 +16,8 @@ const FormNavigation = (props) => {
                 Atras
             </Button>
         )}
-
-        <Button type="submit" >{IsLastStep ? 'Finalizar' : 'Siguiente'}</Button>
+        <Button type="submit"  >{IsLastStep ? 'Finalizar' : 'Siguiente'}</Button> 
+        {} 
     </div>
   )
 }

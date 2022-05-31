@@ -24,10 +24,12 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
 
     const [snapshot,setSnapshot] = useState(initialValues)
 
+    console.log(snapshot)
+
     const step = steps[stepNumber]
 
     const totalSteps = steps.length;
-    const IsLastStep = stepNumber === totalSteps - 1; // aca presentaremos el boton con la funcionalidad del onSubmit. por ej: si tenemos 3 pasos, el ultimo paso estara en el index 2
+    const IsLastStep = stepNumber === totalSteps -1; // aca presentaremos el boton con la funcionalidad del onSubmit. por ej: si tenemos 3 pasos, el ultimo paso estara en el index 2
 
     const next =(values) =>  {
         setSnapshot(values)
@@ -79,6 +81,18 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
           </Form>
         )}
       </Formik>
+      <div>
+        {IsLastStep &&
+        <div>
+        <h1>Titulo:{snapshot.title}</h1>
+        <h1>Descripcion{snapshot.description}</h1>
+        <h1>{}</h1>
+        <h1>Data personal:{snapshot.name}</h1>
+        
+        </div>
+        }
+        
+      </div>
     </div>
   );
 }
