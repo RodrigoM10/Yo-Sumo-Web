@@ -16,7 +16,7 @@ import { TextField } from '@material-ui/core'
 const PetitionForm = () => {
 
   const [image,setImage] =useState({})
-
+const [formValues,setFormValues] = useState({})
   const uploadImage =  (e) => {
     const imagen = e.target.files[0];
 
@@ -24,7 +24,7 @@ const PetitionForm = () => {
   };
 
 console.log({image})
-
+console.log("Valores del formulario guardados:",formValues)
  
 
   return (
@@ -41,6 +41,7 @@ console.log({image})
             email:"",
           }}
           onSubmit={(values) => {
+            setFormValues(values)
             alert(JSON.stringify(values, null, 2));
           }}
         >

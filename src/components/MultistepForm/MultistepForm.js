@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import {Formik,FormikConfig,FormikValues,FormikHelpers, Form}  from 'formik'
 import FormNavigation from './FormNavigation'
+import {Stepper,Step} from "@material-ui/core"
+import { StepLabel } from '@material-ui/core';
 
 const FormTitles = [
     "Titulo de la petición",
@@ -23,8 +25,7 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
     const steps = React.Children.toArray(children) //podemos extraer cada paso mediante la prop children desde un array, lo que nos permitira mapear los children y renderizarlos
 
     const [snapshot,setSnapshot] = useState(initialValues)
-
-    console.log(snapshot)
+    console.log({snapshot})
 
     const step = steps[stepNumber]
 
@@ -53,10 +54,23 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
             FormikHelpers.setTouched({});
             next(values)
         }
+        
     }
 
   return (
     <div>
+      <Stepper>
+               {steps.map(currentStep => {
+                 const label = currentStep.props.stepName;
+                console.log(label)
+                 return (
+                 <Step key={label}>
+                    <StepLabel>
+                      {label}
+                    </StepLabel>
+                 </Step>)
+               })}
+            </Stepper>
       <div>
         <h1>
           <strong>{FormTitles[stepNumber]}</strong>
@@ -64,7 +78,7 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
         <br />
         <h4>{FormSubtitles[stepNumber]}</h4>
       </div>
-
+  
       <Formik
         initialValues={snapshot}
         onSubmit={handleSubmit}
@@ -72,6 +86,7 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
       >
         {(formik) => (
           <Form>
+            
             {step}
             <FormNavigation
               IsLastStep={IsLastStep}
