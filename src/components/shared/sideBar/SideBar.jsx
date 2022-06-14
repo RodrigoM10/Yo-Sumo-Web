@@ -27,7 +27,7 @@ const Sidebar = () => {
             })}
             <div className="mt-4 mx-auto">
                 {isAuthenticated ? (
-                    <Nav.Link as={NavLink} to="/" onClick={(e) => handleLogout(e)} className="btn-yosumo" activeclassname="link-active">Logut <BiLogOutCircle /></Nav.Link>
+                    <Nav.Link as={NavLink} to="/" onClick={(e) => handleLogout(e)} className="btn-yosumo" activeclassname="link-active">Logout <BiLogOutCircle /></Nav.Link>
                 ) : (
                     <div className="d-flex justify-content-center align-items-center">
                          <GoogleAuth />
