@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {Formik,FormikConfig,FormikValues,FormikHelpers, Form}  from 'formik'
 import FormNavigation from './FormNavigation'
 import {Stepper,Step} from "@material-ui/core"
@@ -59,7 +59,7 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
 
   return (
     <div>
-      <Stepper>
+      <Stepper activeStep={stepNumber}>
                {steps.map(currentStep => {
                  const label = currentStep.props.stepName;
                 console.log(label)
@@ -96,17 +96,7 @@ const MultistepForm = ({children,initialValues,onSubmit}) => {
           </Form>
         )}
       </Formik>
-      <div>
-        {IsLastStep &&
-        <div>
-        <h1>Titulo:{snapshot.title}</h1>
-        <h1>Descripcion{snapshot.description}</h1>
-        <h1>{}</h1>
-        <h1>Data personal:{snapshot.name}</h1>
-        
-        </div>
-        }
-        
+      <div>     
       </div>
     </div>
   );

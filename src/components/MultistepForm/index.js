@@ -1,5 +1,5 @@
 
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import InputField from './InputField'
@@ -7,9 +7,9 @@ import './FormStyle.scss'
 import MultistepForm, { FormStep } from './MultistepForm'
 import Advices from './FormAdvices/FormAdvices'
 import { TextField } from '@material-ui/core'
-
-
-
+import { SuccessAlert } from '../alert/SweetAlert'
+import { getPetitions } from '../../services/publicApiService'
+import { SavePetitions } from '../../services/publicApiService'
 
 
 
@@ -17,14 +17,29 @@ const PetitionForm = () => {
 
   const [image,setImage] =useState({})
 const [formValues,setFormValues] = useState({})
-  const uploadImage =  (e) => {
-    const imagen = e.target.files[0];
+  // const uploadImage =  (e) => {
+  //   const imagen = e.target.files[0];
 
-    setImage(imagen.name);
-  };
+  //   setImage(imagen.name);
+  // };
 
-console.log({image})
+
 console.log("Valores del formulario guardados:",formValues)
+
+
+
+ useEffect(() => {
+
+  async function loadPetitions () {
+    const response = await getPetitions()
+
+    if (response.status === 200) {
+      console.log("RESPUESTA CORRECTA",response.data)
+    } 
+  }
+
+  loadPetitions ()
+ },[])
  
 
   return (
@@ -40,10 +55,13 @@ console.log("Valores del formulario guardados:",formValues)
             cellphone:"",
             email:"",
           }}
-          onSubmit={(values) => {
+          onSubmit={(values,actions) => {
+            SavePetitions(values)
             setFormValues(values)
-            alert(JSON.stringify(values, null, 2));
+            SuccessAlert("Peticion creada!","Podes a visualizar tu peticion en la pestaña 'mis peticiones'");
+            actions.resetForm()
           }}
+
         >
           <FormStep
             stepName="Title"
@@ -58,18 +76,16 @@ console.log("Valores del formulario guardados:",formValues)
               label="Titulo"
             />
           </FormStep>
-          <FormStep stepName="image"
+          <FormStep stepName="Imagen"
             onSubmit={() => console.log("running step2")}
             
           className="photo-container">
             <InputField
               name="image"
-              label="Imagen"
-              type="file"
-              onChange={uploadImage }
+              label="Imagen"  
             />
           </FormStep>
-          <FormStep stepName="Description"
+          <FormStep stepName="Descripción"
             onSubmit={() => console.log("running step3")}
             validationSchema={yup.object({
               description:yup.string().max(500).required("Coloque una descripción")
@@ -80,7 +96,7 @@ console.log("Valores del formulario guardados:",formValues)
               label="Descripción"
             />
           </FormStep>
-          <FormStep stepName="PersonalData"
+          <FormStep stepName="información personal"
             onSubmit={() => console.log("running step4")}
             validationSchema={yup.object({
               name:yup.string().required(),
