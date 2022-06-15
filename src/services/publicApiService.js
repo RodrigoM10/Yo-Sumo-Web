@@ -25,7 +25,7 @@ export async function SavePetitions(petitionData) {
     console.log({petitionData})
      const responseData = {
         title: petitionData.title,
-        image: petitionData.image,
+        image: petitionData.image.name,
         description:petitionData.description,
         nameAuthor:petitionData.name,
         phoneAuthor:petitionData.cellphone,

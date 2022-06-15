@@ -1,16 +1,10 @@
-import { Container } from '@material-ui/core'
+
 import React from 'react'
 import '../FormStyle.scss'
 import testPhoto from '../../../assets/icons/Contaminación_en_Maracaibo,_Venezuela.jpg'
 
 const Summary = ({formData}) => {
- const {title,
-        photo,
-        description,
-        name,
-        cellphone,
-        email
-      } = formData || {}
+
 
   return (
     <div className="container">

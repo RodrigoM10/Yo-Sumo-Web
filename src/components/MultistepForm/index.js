@@ -1,12 +1,10 @@
 
 import React,{useState,useEffect} from 'react'
-import { Formik } from 'formik'
 import * as yup from 'yup'
 import InputField from './InputField'
 import './FormStyle.scss'
 import MultistepForm, { FormStep } from './MultistepForm'
 import Advices from './FormAdvices/FormAdvices'
-import { TextField } from '@material-ui/core'
 import { SuccessAlert } from '../alert/SweetAlert'
 import { getPetitions } from '../../services/publicApiService'
 import { SavePetitions } from '../../services/publicApiService'
@@ -15,14 +13,9 @@ import { SavePetitions } from '../../services/publicApiService'
 
 const PetitionForm = () => {
 
-  const [image,setImage] =useState({})
+  const [image,setImage] =useState(null)
 const [formValues,setFormValues] = useState({})
-  // const uploadImage =  (e) => {
-  //   const imagen = e.target.files[0];
-
-  //   setImage(imagen.name);
-  // };
-
+  
 
 console.log("Valores del formulario guardados:",formValues)
 
@@ -49,14 +42,15 @@ console.log("Valores del formulario guardados:",formValues)
         <MultistepForm
           initialValues={{
             title: "",
-            image:"",
+            image:null,
             description:"",
             name:"",
             cellphone:"",
             email:"",
           }}
           onSubmit={(values,actions) => {
-            SavePetitions(values)
+            console.log(image);
+            SavePetitions({...values, image })
             setFormValues(values)
             SuccessAlert("Peticion creada!","Podes a visualizar tu peticion en la pestaña 'mis peticiones'");
             actions.resetForm()
@@ -64,10 +58,10 @@ console.log("Valores del formulario guardados:",formValues)
 
         >
           <FormStep
-            stepName="Title"
+            stepName="Título"
             onSubmit={() => console.log("running step1")}
             validationSchema={yup.object({
-              title : yup.string().min(4).max(20).required("titulo requerido").matches(/[A-Z]/, 'Debe comenzar con mayuscula')
+              title : yup.string().min(4,"Debe contener un minimo de 4 caracteres").max(20,"No puede sobrepasar los 20 caracteres").required("titulo requerido").matches(/[A-Z]/, 'Debe comenzar con mayuscula')
           })}
           className="title-container"
           >
@@ -76,19 +70,28 @@ console.log("Valores del formulario guardados:",formValues)
               label="Titulo"
             />
           </FormStep>
-          <FormStep stepName="Imagen"
-            onSubmit={() => console.log("running step2")}
-            
-          className="photo-container">
-            <InputField
-              name="image"
-              label="Imagen"  
-            />
-          </FormStep>
+          {({ formik } = {}) => (
+            <FormStep
+              stepName="Imagen"
+              onSubmit={() => console.log('running step2')}
+              className="photo-container"
+            >
+              <InputField
+                type="file"
+                name="image"
+                label="Imagen"
+                onChange={(event) => {
+                  const [image] = event.currentTarget.files;
+                  setImage(image);
+                  formik.setFieldValue('image', image.fileName);
+                }}
+              />
+            </FormStep>
+          )}
           <FormStep stepName="Descripción"
             onSubmit={() => console.log("running step3")}
             validationSchema={yup.object({
-              description:yup.string().max(500).required("Coloque una descripción")
+              description:yup.string().min(15,"Debe contener un minimo de 15 caracteres").max(500,"maximo").required("No puede sobrepasar los 500 caracteres")
           })}
             className="description-container">
             <InputField
@@ -99,8 +102,8 @@ console.log("Valores del formulario guardados:",formValues)
           <FormStep stepName="información personal"
             onSubmit={() => console.log("running step4")}
             validationSchema={yup.object({
-              name:yup.string().required(),
-              cellphone:yup.number().required(),
+              name:yup.string().required("Coloque su nombre completo"),
+              cellphone:yup.number().required("Indique su numero de telefono"),
               email:yup.string().email().required("Debe colocar un mail valido"),
             })}
             className="personal-info-container">
