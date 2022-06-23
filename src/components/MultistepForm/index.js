@@ -36,9 +36,10 @@ console.log("Valores del formulario guardados:",formValues)
  
 
   return (
-    <div className="form">
+    <>
       
       <div className="form-container">
+        <div className='multistep-form'>
         <MultistepForm
           initialValues={{
             title: "",
@@ -61,9 +62,8 @@ console.log("Valores del formulario guardados:",formValues)
             stepName="Título"
             onSubmit={() => console.log("running step1")}
             validationSchema={yup.object({
-              title : yup.string().min(4,"Debe contener un minimo de 4 caracteres").max(20,"No puede sobrepasar los 20 caracteres").required("titulo requerido").matches(/[A-Z]/, 'Debe comenzar con mayuscula')
+              title : yup.string().min(4,"Debe contener un minimo de 4 caracteres").max(20,"No puede sobrepasar los 20 caracteres").required("Titulo requerido").matches(/[A-Z]/, 'Debe comenzar con mayuscula')
           })}
-          className="title-container"
           >
             <InputField            
               name="title"
@@ -74,7 +74,7 @@ console.log("Valores del formulario guardados:",formValues)
             <FormStep
               stepName="Imagen"
               onSubmit={() => console.log('running step2')}
-              className="photo-container"
+              
             >
               <InputField
                 type="file"
@@ -93,7 +93,7 @@ console.log("Valores del formulario guardados:",formValues)
             validationSchema={yup.object({
               description:yup.string().min(15,"Debe contener un minimo de 15 caracteres").max(500,"maximo").required("No puede sobrepasar los 500 caracteres")
           })}
-            className="description-container">
+            >
             <InputField
               name="description"
               label="Descripción"
@@ -106,15 +106,16 @@ console.log("Valores del formulario guardados:",formValues)
               cellphone:yup.number().required("Indique su numero de telefono"),
               email:yup.string().email().required("Debe colocar un mail valido"),
             })}
-            className="personal-info-container">
+            >
             <InputField name="name" label="Nombre completo" />
             <InputField name="cellphone" label="Celular" />
             <InputField name="email" label="email" />
           </FormStep>
         </MultistepForm>
+        </div>
       </div>
       <Advices/>
-    </div>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   Formik,
   Form,
@@ -6,6 +6,7 @@ import {
 import FormNavigation from './FormNavigation';
 import { Stepper, Step } from '@material-ui/core';
 import { StepLabel } from '@material-ui/core';
+import './FormStyle.scss'
 
 const FormTitles = [
   'Titulo de la petición',
@@ -56,17 +57,43 @@ const MultistepForm = ({ children, initialValues, onSubmit }) => {
     }
   };
 
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+  
+ function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    );
+
+    useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowDimensions;
+ }
+
+ const {width} = useWindowDimensions()
+
   return (
     <div>
-      <Stepper activeStep={stepNumber}>
+      <Stepper activeStep={stepNumber} className={width< 600 ? 'stepper' : ''}>
         {children.map((currentStep) => {
           const stepElement =
             typeof currentStep === 'function' ? currentStep() : currentStep;
           const label = stepElement.props.stepName;
 
           return (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
+            <Step className={width< 600 ? 'step' : ''}  key={label}>
+              <StepLabel >{label}</StepLabel>
             </Step>
           );
         })}
