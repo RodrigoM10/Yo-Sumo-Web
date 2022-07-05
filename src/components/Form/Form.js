@@ -5,18 +5,18 @@ import Description from "./Description";
 import PersonalInfo from "./PersonalInfo";
 import Summary from "./Summary";
 import Advices from "./FormAdvices/FormAdvices";
-import './FormStyle.scss'
+import "./FormStyle.scss";
 
 const Form = () => {
   const [page, setPage] = useState(0);
-  const [formData,setFormData] = useState({
-    title : "",
+  const [formData, setFormData] = useState({
+    title: "",
     photo: "",
     description: "",
-    name:"",
-    cellphone:"",
-    email:""
-  })
+    name: "",
+    cellphone: "",
+    email: "",
+  });
 
   const FormTitles = [
     "Titulo de la petición",
@@ -30,10 +30,9 @@ const Form = () => {
     "¿Contale a las personas qué es lo que querés cambiar?",
     "Las peticiones con foto consiguen hasta 6 veces más firmas",
     "Explicá el problema y porque es importante. Contá cómo te impacta a vos, a tu familia y a la comunidad, esto hace que más personas apoyen la causa.",
-    "Completá tus datos en caso de que tengamos que contactar para revisar la petición.","Antes de finalizar, chequea que todo este correcto, y si necesitas cambiar algo, podes volver a editar tu petición",
-  ]
-
-  
+    "Completá tus datos en caso de que tengamos que contactar para revisar la petición.",
+    "Antes de finalizar, chequea que todo este correcto, y si necesitas cambiar algo, podes volver a editar tu petición",
+  ];
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -52,22 +51,31 @@ const Form = () => {
   return (
     <div className="form">
       <div className="progressbar">
-      <div
-          style={{ width: page === 0 ? "25%" : page === 1 ? "50%" : page === 2 ? "75%" :  "100%"  }}
-        >
-        </div>
+        <div
+          style={{
+            width:
+              page === 0
+                ? "25%"
+                : page === 1
+                ? "50%"
+                : page === 2
+                ? "75%"
+                : "100%",
+          }}
+        ></div>
       </div>
       <div className="header">
         <div className="header-section">
-            <h1><strong>{FormTitles[page]}</strong></h1>
-            <br/>
-            <h4>{FormSubtitles[page]}</h4>
-            </div>
-          </div>
-        <div className="form-container">
-         
-          <div className="body">{PageDisplay()}</div>
-          <div className="footer">
+          <h1>
+            <strong>{FormTitles[page]}</strong>
+          </h1>
+          <br />
+          <h4>{FormSubtitles[page]}</h4>
+        </div>
+      </div>
+      <div className="form-container">
+        <div className="body">{PageDisplay()}</div>
+        <div className="footer">
           <button
             disabled={page === 0}
             onClick={() => {
@@ -77,24 +85,21 @@ const Form = () => {
             Atras
           </button>
           <button
-            
             onClick={() => {
-             if(page === FormTitles.length-1){
-               alert("Peticion creada")
-               console.log({formData})
-               setPage(0)
-             }
-             else {
-               setPage((currPage) => currPage + 1);
+              if (page === FormTitles.length - 1) {
+                alert("Peticion creada");
+                console.log({ formData });
+                setPage(0);
+              } else {
+                setPage((currPage) => currPage + 1);
               }
             }}
           >
-            {page === FormTitles.length-1 ? "Finalizar" : "Siguiente"}
+            {page === FormTitles.length - 1 ? "Finalizar" : "Siguiente"}
           </button>
-          </div>
-          <Advices/>
         </div>
-      
+        <Advices />
+      </div>
     </div>
   );
 };
