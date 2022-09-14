@@ -37,7 +37,7 @@ export const NavbarMain = () => {
             })}
           </Nav>
           {isAuthenticated ?
-              <Nav.Link as={NavLink} to="/" onClick={(e) => handleLogout(e)} className="btn-yosumo" activeclassname="link-active">Logut <BiLogOutCircle /></Nav.Link>
+              <Nav.Link as={NavLink} to="/" onClick={(e) => handleLogout(e)} className="btn-yosumo" activeclassname="link-active">Logout <BiLogOutCircle /></Nav.Link>
             : 
               <GoogleAuth />
           }
